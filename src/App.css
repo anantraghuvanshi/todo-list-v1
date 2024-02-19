@@ -6,4 +6,5 @@ h1{
 
 .btn{
   margin-bottom: 10px;
+  min-width: 80px;
 }
