@@ -1,5 +1,6 @@
 import AppName from "./components/AppName";
 import AddTodo from "./components/AddTodo";
+import './App.css';
 
 function App() {
   return (
