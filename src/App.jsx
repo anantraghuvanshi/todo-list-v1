@@ -8,9 +8,11 @@ import { useState } from "react";
 function App() {
   const initialTodoItems = [];
 
-  const [todoItems, setTodoItems] = useState();
+  const [todoItems, setTodoItems] = useState("");
 
-  const handleNewItem = (item, itemDueDate) => {};
+  const handleNewItem = (item, itemDueDate) => {
+    console.log(`New Item added: ${item} Date: ${itemDueDate}`);
+  };
   return (
     <center className="todo-container">
       <AppName />
