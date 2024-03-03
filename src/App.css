@@ -1,28 +1,86 @@
-h1 {
+body {
+  background-color: #f9fafb; 
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.todo-container h1 {
   font-weight: 700;
   font-size: 45px;
-  margin: 10px;
-  margin-bottom: 20px;
+  margin: 20px 0;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-input {
+.todo-container input[type="text"],
+.todo-container input[type="date"] {
   width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
 }
 
-.items-container {
-  text-align: left;
+.todo-container .items-container {
+  width: 80%;
+  max-width: 600px;
 }
 
-.kg-button {
-  min-width: 80px;
+.todo-container .items-container .container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 }
 
-.kg-row {
-  margin: 10px 5px;
+.todo-container .items-container .container:hover {
+  transform: translateY(-5px);
 }
 
-.welcome{
+.todo-container .items-container .row {
+  display: flex;
+  align-items: center;
+}
+
+.todo-container .items-container .col-6 {
+  flex: 1;
+}
+
+.todo-container .items-container .col-2 {
+  text-align: right;
+}
+
+.todo-container .items-container button {
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.todo-container .items-container button:hover {
+  background-color: #ff6464;
+  color: #fff;
+}
+
+.todo-container .items-container button svg {
+  font-size: 20px;
+}
+
+.todo-container .welcome {
   font-size: 30px;
   margin-top: 50px;
   font-weight: 600;
+  color: #555;
 }
