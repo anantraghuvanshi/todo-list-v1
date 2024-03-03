@@ -1,5 +1,5 @@
 const WelcomeMessage = () => {
-  return <p>Enjoy Your Day</p>;
+  return <p className="welcome">Enjoy Your Day</p>;
 };
 
 export default WelcomeMessage;
