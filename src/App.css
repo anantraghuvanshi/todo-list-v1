@@ -1,8 +1,10 @@
 body {
-  background-color: #f9fafb; 
+  background: linear-gradient(135deg, #e8eff1 0%, #cfd9df 50%, #b8c6db 100%);
+  transition: background-color 0.5s;
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
+  transition: background-color 0.5s; 
 }
 
 .todo-container {
@@ -11,24 +13,31 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  animation: fadeIn 1s ease-in-out; 
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .todo-container h1 {
   font-weight: 700;
   font-size: 45px;
   margin: 20px 0;
-  color: #333;
+  color: #4a4e69; 
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .todo-container input[type="text"],
 .todo-container input[type="date"] {
-  width: 100%;
+  width: 90%; 
   padding: 12px;
-  border: 2px solid #ccc;
+  border: 2px solid #7f53ac;
   border-radius: 8px;
   margin-bottom: 20px;
   font-size: 16px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .todo-container .items-container {
@@ -42,11 +51,12 @@ body {
   border-radius: 12px;
   margin-bottom: 20px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .todo-container .items-container .container:hover {
   transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .todo-container .items-container .row {
@@ -66,12 +76,14 @@ body {
   padding: 12px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  background-color: #7f53ac; 
+  color: #fff; 
 }
 
 .todo-container .items-container button:hover {
-  background-color: #ff6464;
-  color: #fff;
+  background-color: #ff6464; 
+  transform: scale(1.1); 
 }
 
 .todo-container .items-container button svg {
@@ -82,5 +94,5 @@ body {
   font-size: 30px;
   margin-top: 50px;
   font-weight: 600;
-  color: #555;
+  color: #4a4e69; 
 }
