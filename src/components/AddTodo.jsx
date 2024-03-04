@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { BiMessageAdd } from "react-icons/bi";
 
 function AddTodo({ onNewItem }) {
@@ -9,6 +9,8 @@ function AddTodo({ onNewItem }) {
     event.preventDefault();
     const todoName = todoNameElement.current.value;
     const dueDate = dueDateElement.current.value;
+    todoNameElement.current.value = "";
+    dueDateElement.current.value = "";
     onNewItem(todoName, dueDate);
   };
   return (
@@ -19,17 +21,10 @@ function AddTodo({ onNewItem }) {
             type="text"
             ref={todoNameElement}
             placeholder="Enter Todo Here"
-            value={todoName}
-            onChange={handleNameChange}
           />
         </div>
         <div className="col-4">
-          <input
-            type="date"
-            ref={dueDateElement}
-            value={dueDate}
-            onChange={handleDateChange}
-          />
+          <input type="date" ref={dueDateElement} />
         </div>
         <div className="col-2">
           <button
