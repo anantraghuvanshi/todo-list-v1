@@ -96,3 +96,16 @@ body {
   font-weight: 600;
   color: #4a4e69; 
 }
+
+.themeSelector {
+    position: fixed; 
+    right: 20px; 
+    bottom: 20px; 
+    display: flex;
+    align-items: center;
+}
+.themeSelector-text {
+  margin-right: 10px; 
+}
+  
+    
