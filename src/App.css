@@ -104,8 +104,16 @@ body {
     display: flex;
     align-items: center;
 }
-.themeSelector-text {
-  margin-right: 10px; 
+.themeSelector-dropdown {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #7f53ac;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  appearance: none; 
 }
+  
   
     
