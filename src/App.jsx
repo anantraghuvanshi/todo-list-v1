@@ -34,7 +34,7 @@ function App() {
     <div className="todo-container" style={themes[theme]}>
       <AppName />
       <AddTodo onNewItem={handleNewItem} />
-      {todoItems.length === 0 && <WelcomeMessage />}
+      <WelcomeMessage todoItems={todoItems} />
       <TodoItems todoItems={todoItems} onDeleteClick={handleDeleteItem} />
       <div className="themeSelector">
         <ThemeSelector onThemeChange={handleThemeChange} />
