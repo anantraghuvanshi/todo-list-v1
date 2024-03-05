@@ -7,6 +7,7 @@ import { themes } from "./components/themes";
 
 import "./App.css";
 import { useState } from "react";
+import { TodoItemsContext } from "./store/todo-item-store";
 
 function App() {
   const initialTodoItems = [];
@@ -31,15 +32,17 @@ function App() {
   };
 
   return (
-    <div className="todo-container" style={themes[theme]}>
-      <AppName />
-      <AddTodo onNewItem={handleNewItem} />
-      <WelcomeMessage todoItems={todoItems} />
-      <TodoItems todoItems={todoItems} onDeleteClick={handleDeleteItem} />
-      <div className="themeSelector">
-        <ThemeSelector onThemeChange={handleThemeChange} />
+    <TodoItemsContext.Provider value={todoItems}>
+      <div className="todo-container" style={themes[theme]}>
+        <AppName />
+        <AddTodo onNewItem={handleNewItem} />
+        <WelcomeMessage />
+        <TodoItems onDeleteClick={handleDeleteItem} />
+        <div className="themeSelector">
+          <ThemeSelector onThemeChange={handleThemeChange} />
+        </div>
       </div>
-    </div>
+    </TodoItemsContext.Provider>
   );
 }
 
