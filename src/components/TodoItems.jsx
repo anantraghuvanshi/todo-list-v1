@@ -3,7 +3,8 @@ import { TodoItemsContext } from "../store/todo-item-store";
 import TodoItem from "./TodoItem";
 
 const TodoItems = ({ onDeleteClick }) => {
-  const todoItems = useContext(TodoItemsContext);
+  const contextObj = useContext(TodoItemsContext);
+  const todoItems = contextObj.contextObj;
   return (
     <div className="items-container">
       {todoItems.map((item) => (

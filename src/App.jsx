@@ -19,25 +19,31 @@ function App() {
     setTheme(newTheme);
   };
 
-  const handleNewItem = (itemName, itemDueDate) => {
+  const addNewItem = (itemName, itemDueDate) => {
     setTodoItems((currValue) => [
       ...currValue,
       { name: itemName, dueDate: itemDueDate },
     ]);
   };
 
-  const handleDeleteItem = (todoItemName) => {
+  const deleteItem = (todoItemName) => {
     const newTodoItems = todoItems.filter((item) => item.name !== todoItemName);
     setTodoItems(newTodoItems);
   };
 
   return (
-    <TodoItemsContext.Provider value={todoItems}>
+    <TodoItemsContext.Provider
+      value={{
+        todoItems: todoItems,
+        addNewItem: addNewItem,
+        deleteItem: deleteItem,
+      }}
+    >
       <div className="todo-container" style={themes[theme]}>
         <AppName />
-        <AddTodo onNewItem={handleNewItem} />
+        <AddTodo />
         <WelcomeMessage />
-        <TodoItems onDeleteClick={handleDeleteItem} />
+        <TodoItems />
         <div className="themeSelector">
           <ThemeSelector onThemeChange={handleThemeChange} />
         </div>
